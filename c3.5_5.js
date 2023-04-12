@@ -15,11 +15,8 @@ class Device {
     show() {
         console.group(`Device name: ${this.name}`)
         for (let prop in this)
-        {
-            if (prop === "name" || typeof(this[prop]) === "function")
-                continue;
-            console.log(`${prop}: ${this[prop]}`)
-        }        
+            if (prop !== "name")
+                console.log(`${prop}: ${this[prop]}`)
         console.groupEnd()
     }
 
